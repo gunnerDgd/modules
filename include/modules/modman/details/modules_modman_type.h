@@ -25,6 +25,13 @@ typedef struct __synapse_modules_modman_module
 		hnd_module;
 	synapse_modules_interface
 		hnd_module_interface;
+
+	HANDLE
+		  hnd_module_thread;
+	DWORD
+		  hnd_module_thread_id;
+	void
+		(*ptr_module_entry)(synapse_modules_handle);
 	
 } __synapse_modules_modman_module;
 

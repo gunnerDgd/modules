@@ -19,28 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_init.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_manip.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_module_init.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_type.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\modman.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\modman_init.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\modman_manip.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modman\modman_module_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman.hpp" />
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman_module.hpp" />
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman_traits.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_init.c" />
-    <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_manip.c" />
-    <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_module_init.c" />
-    <ClCompile Include="..\..\..\..\source\modman\modman_init.c" />
-    <ClCompile Include="..\..\..\..\source\modman\modman_manip.c" />
-    <ClCompile Include="..\..\..\..\source\modman\modman_module_init.c" />
+    <ClCompile Include="..\..\..\..\source\modman\modman.cpp" />
+    <ClCompile Include="..\..\..\..\source\modman\modman_module.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6c9d8fe8-30ec-4ea1-ae3d-b37b3377a478}</ProjectGuid>
-    <RootNamespace>synapsemodulesmodman</RootNamespace>
+    <ProjectGuid>{bc48d406-c4a0-4a54-9f46-49dfbb946452}</ProjectGuid>
+    <RootNamespace>synapsemodulesmodmancpp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -89,7 +80,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-modules\include;E:\Programming\C++\Projects\Experimental\synapse-memory\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;E:\Programming\C++\Projects\Experimental\synapse-execution\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-modules\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;E:\Programming\C++\Projects\Experimental\synapse-memory\include;$(IncludePath)</IncludePath>
     <OutDir>E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -134,7 +125,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>

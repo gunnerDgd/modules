@@ -48,6 +48,9 @@
     <ClInclude Include="..\..\..\..\include\modules\modman\modman_module_init.h">
       <Filter>Header Files\modman</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman.h">
+      <Filter>Header Files\modman</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_init.c">

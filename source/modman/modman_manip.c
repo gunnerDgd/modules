@@ -3,7 +3,7 @@
 
 void
 synapse_modules_modman_module_attach
-	(synapse_modules_modman pModMan, synapse_modules_handle pModule)
+	(synapse_modules_modman pModMan, synapse_modules_handle pModule, void* pParam)
 {
 	__synapse_modules_modman_module_attach
 		(synapse_modules_opaque_reference(pModMan),
@@ -12,7 +12,7 @@ synapse_modules_modman_module_attach
 
 void
 synapse_modules_modman_module_detach
-	(synapse_modules_modman pModMan, synapse_modules_handle pModule)
+	(synapse_modules_modman pModMan, synapse_modules_handle pModule, void* pParam)
 {
 	__synapse_modules_modman_module_detach
 		(synapse_modules_opaque_reference(pModMan),
@@ -21,7 +21,7 @@ synapse_modules_modman_module_detach
 
 void
 synapse_modules_modman_module_reload
-	(synapse_modules_modman pModMan, synapse_modules_handle pModule)
+	(synapse_modules_modman pModMan, synapse_modules_handle pModule, void* pParam)
 {
 	__synapse_modules_modman_module_reload
 		(synapse_modules_opaque_reference(pModMan),

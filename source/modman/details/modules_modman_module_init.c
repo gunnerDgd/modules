@@ -9,6 +9,8 @@ __synapse_modules_modman_module_initialize
 
 	ptr_modhnd->hnd_module
 		= LoadLibraryA(pModPath);
+	ptr_modhnd->ptr_module_entry
+		= GetProcAddress(ptr_modhnd->hnd_module, "synapse_module_entry");
 	ptr_modhnd->hnd_module_interface.initialize
 		= GetProcAddress(ptr_modhnd->hnd_module, "synapse_module_initialize");
 	ptr_modhnd->hnd_module_interface.cleanup
@@ -31,7 +33,8 @@ void
 __synapse_modules_modman_module_cleanup
 	(__synapse_modules_modman* pModman, __synapse_modules_modman_module* pModule)
 {
-	pModule->hnd_module_interface.cleanup();
+	pModule->hnd_module_interface
+		.cleanup();
 	
 	FreeLibrary
 		(pModule->hnd_module);

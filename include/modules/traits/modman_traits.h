@@ -24,8 +24,6 @@ typedef struct synapse_modules_modman_traits
 	void
 		(*reload_module)  (synapse_modules_modman, synapse_modules_handle);
 	
-	synapse_modules_handle
-		(*retreive_module)(synapse_modules_modman, const char*);
 	char*
-		(*retrieve_name)(synapse_modules_handle);
+		(*module_name)    (synapse_modules_handle);
 } synapse_modules_modman_traits;

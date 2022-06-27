@@ -9,9 +9,9 @@ typedef struct synapse_modules_interface
 	void (*cleanup)   ();
 
 	void
-		(*attach)(synapse_modules_handle);
+		(*attach)(synapse_modules_handle, void*);
 	void
-		(*detach)(synapse_modules_handle);
+		(*detach)(synapse_modules_handle, void*);
 	void
-		(*reload)(synapse_modules_handle);
+		(*reload)(synapse_modules_handle, void*);
 } synapse_modules_interface;

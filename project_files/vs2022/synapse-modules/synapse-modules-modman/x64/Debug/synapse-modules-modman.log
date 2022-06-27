@@ -1,8 +1,13 @@
 ﻿  modules_modman_init.c
   modules_modman_manip.c
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(23,52): warning C4133: 'function': incompatible types - from 'void (__cdecl *)(void *)' to '_beginthreadex_proc_type'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(23,95): warning C4047: 'function': 'unsigned int *' differs in levels of indirection from 'DWORD'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(23,73): warning C4024: '_beginthreadex': different types for formal and actual parameter 6
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(23,96): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'uintptr_t'
   modules_modman_module_init.c
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(13,72): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_moduels_interface *)'
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(24,37): warning C4133: 'function': incompatible types - from 'synapse_modules_interface *' to 'synapse_moduels_interface *'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(13,67): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_modules_handle)'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(15,72): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_moduels_interface *)'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(26,37): warning C4133: 'function': incompatible types - from 'synapse_modules_interface *' to 'synapse_moduels_interface *'
   modman_init.c
   modman_manip.c
   modman_module_init.c

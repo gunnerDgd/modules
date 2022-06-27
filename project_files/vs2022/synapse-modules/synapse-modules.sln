@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "synapse-modules", "synapse-
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "synapse-modules-modman", "synapse-modules-modman\synapse-modules-modman.vcxproj", "{6C9D8FE8-30EC-4EA1-AE3D-B37B3377A478}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "synapse-modules-modman-cpp", "synapse-modules-modman-cpp\synapse-modules-modman-cpp.vcxproj", "{BC48D406-C4A0-4A54-9F46-49DFBB946452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{6C9D8FE8-30EC-4EA1-AE3D-B37B3377A478}.Release|x64.Build.0 = Release|x64
 		{6C9D8FE8-30EC-4EA1-AE3D-B37B3377A478}.Release|x86.ActiveCfg = Release|Win32
 		{6C9D8FE8-30EC-4EA1-AE3D-B37B3377A478}.Release|x86.Build.0 = Release|Win32
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Debug|x64.ActiveCfg = Debug|x64
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Debug|x64.Build.0 = Debug|x64
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Debug|x86.Build.0 = Debug|Win32
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Release|x64.ActiveCfg = Release|x64
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Release|x64.Build.0 = Release|x64
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Release|x86.ActiveCfg = Release|Win32
+		{BC48D406-C4A0-4A54-9F46-49DFBB946452}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
