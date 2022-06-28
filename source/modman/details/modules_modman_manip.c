@@ -20,7 +20,7 @@ __synapse_modules_modman_module_attach
 		(pModule->modman_module_handle, pParam);
 	pModule->hnd_module_thread
 		= _beginthreadex
-			(NULL, 0, &__synapse_modules_modman_module_entry, pModule, 0, pModule->hnd_module_thread_id);
+			(NULL, 0, &__synapse_modules_modman_module_entry, pModule, 0, &pModule->hnd_module_thread_id);
 }
 
 void

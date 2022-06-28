@@ -28,14 +28,6 @@ synapse_modules_modman_module_reload
 		 synapse_modules_opaque_reference(pModule));
 }
 
-void
-synapse_modules_modman_module_retrieve
-	(synapse_modules_modman pModMan, const char* pName)
-{
-	__synapse_modules_modman_module_retrieve
-		(synapse_modules_opaque_reference(pModMan), pName);
-}
-
 char*
 synapse_modules_modman_module_retrieve_name
 	(synapse_modules_handle pModule)
