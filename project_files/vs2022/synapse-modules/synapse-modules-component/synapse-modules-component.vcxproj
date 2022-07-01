@@ -19,16 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\defines\opaque\opaque.h" />
-    <ClInclude Include="..\..\..\..\include\modules\traits\modman_component_interface.h" />
-    <ClInclude Include="..\..\..\..\include\modules\traits\modman_interface.h" />
-    <ClInclude Include="..\..\..\..\include\modules\traits\modman_traits.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\component.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\component_type.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\details\manager\modules_compmgr_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\details\manager\modules_compmgr_manip.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\details\modules_component.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\details\modules_component_type.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\manager\component_manager_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\component\manager\component_manager_manip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\source\component\component.c" />
+    <ClCompile Include="..\..\..\..\source\component\details\manager\modules_compmgr_init.c" />
+    <ClCompile Include="..\..\..\..\source\component\details\manager\modules_compmgr_manip.c" />
+    <ClCompile Include="..\..\..\..\source\component\details\modules_component.c" />
+    <ClCompile Include="..\..\..\..\source\component\manager\component_manager_init.c" />
+    <ClCompile Include="..\..\..\..\source\component\manager\component_manager_manip.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{eb5405a7-6b65-4074-a85b-341a734ee684}</ProjectGuid>
-    <RootNamespace>synapsemodules</RootNamespace>
+    <ProjectGuid>{4eb82d15-3d27-466b-a07f-067b277763ba}</ProjectGuid>
+    <RootNamespace>synapsemodulescomponent</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -77,7 +89,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-modules\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-memory\include;E:\Programming\C++\Projects\Experimental\synapse-modules\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;$(IncludePath)</IncludePath>
+    <OutDir>E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -119,9 +132,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>

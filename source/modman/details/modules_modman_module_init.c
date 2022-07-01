@@ -9,18 +9,16 @@ __synapse_modules_modman_module_initialize
 
 	ptr_modhnd->hnd_module
 		= LoadLibraryA(pModPath);
-	ptr_modhnd->ptr_module_entry
+	ptr_modhnd->modman_module_thread.hnd_module_thread_entry
 		= GetProcAddress(ptr_modhnd->hnd_module, "synapse_module_entry");
 	ptr_modhnd->hnd_module_interface.initialize
 		= GetProcAddress(ptr_modhnd->hnd_module, "synapse_module_initialize");
 	ptr_modhnd->hnd_module_interface.cleanup
 		= GetProcAddress(ptr_modhnd->hnd_module, "synapse_module_cleanup");
 
-	ptr_modhnd->modman_table_node
+	ptr_modhnd->modman_module_handle
 		= synapse_structure_double_linked_insert_back
 			(pModman->modman_loaded_module, &pModman, sizeof(void*));
-	ptr_modhnd->modman_module_handle.opaque
-		= ptr_modhnd;
 
 	ptr_modhnd->hnd_module_interface.initialize
 		(&ptr_modhnd->hnd_module_interface);

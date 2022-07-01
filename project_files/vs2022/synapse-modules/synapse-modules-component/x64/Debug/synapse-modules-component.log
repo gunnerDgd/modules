@@ -1,0 +1,8 @@
+﻿  component.c
+  modules_compmgr_init.c
+  modules_compmgr_manip.c
+  modules_component.c
+  component_manager_init.c
+  component_manager_manip.c
+  Generating Code...
+  synapse-modules-component.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\synapse-modules-component.lib

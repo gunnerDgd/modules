@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\component">
+      <UniqueIdentifier>{86ba0a3e-3244-4279-9e4e-d9384eb28457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component">
+      <UniqueIdentifier>{bee9966f-f4c6-4f63-9fa6-72556f99c6ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\details">
+      <UniqueIdentifier>{245d9f06-5352-4fbb-a2b8-c7054ffc1871}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\details">
+      <UniqueIdentifier>{eb3b312b-a11d-4078-944d-a80c431f0d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\details\manager">
+      <UniqueIdentifier>{6ba7c9c6-bd80-4c4f-a635-d484c40b3824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\manager">
+      <UniqueIdentifier>{df158361-eb58-494d-9a41-3ad5a5078be3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\details\manager">
+      <UniqueIdentifier>{33dbed35-bb46-4885-805a-4c787e899e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\manager">
+      <UniqueIdentifier>{fd90e400-e60a-4850-b9ce-2c0272b39d56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\modules\component\details\modules_component_type.h">
+      <Filter>Header Files\component\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\details\modules_component.h">
+      <Filter>Header Files\component\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\component_type.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\component.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\details\manager\modules_compmgr_init.h">
+      <Filter>Header Files\component\details\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\details\manager\modules_compmgr_manip.h">
+      <Filter>Header Files\component\details\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\manager\component_manager_init.h">
+      <Filter>Header Files\component\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\component\manager\component_manager_manip.h">
+      <Filter>Header Files\component\manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\source\component\details\modules_component.c">
+      <Filter>Source Files\component\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\component\details\manager\modules_compmgr_init.c">
+      <Filter>Source Files\component\details\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\component\details\manager\modules_compmgr_manip.c">
+      <Filter>Source Files\component\details\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\component\manager\component_manager_init.c">
+      <Filter>Source Files\component\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\component\manager\component_manager_manip.c">
+      <Filter>Source Files\component\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\component\component.c">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

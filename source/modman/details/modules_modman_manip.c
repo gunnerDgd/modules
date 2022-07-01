@@ -8,7 +8,7 @@ __synapse_modules_modman_module_entry
 	__synapse_modules_modman_module* ptr_module
 		= pVoidParam;
 
-	ptr_module->ptr_module_entry
+	ptr_module->modman_module_thread.hnd_module_thread_entry
 		(ptr_module->modman_module_handle);
 }
 
@@ -18,9 +18,10 @@ __synapse_modules_modman_module_attach
 {
 	pModule->hnd_module_interface.attach
 		(pModule->modman_module_handle, pParam);
-	pModule->hnd_module_thread
+	pModule->modman_module_thread.hnd_module_thread
 		= _beginthreadex
-			(NULL, 0, &__synapse_modules_modman_module_entry, pModule, 0, &pModule->hnd_module_thread_id);
+			(NULL, 0, &__synapse_modules_modman_module_entry, 
+				pModule, 0, &pModule->modman_module_thread.hnd_module_thread_id);
 }
 
 void
@@ -31,7 +32,7 @@ __synapse_modules_modman_module_detach
 		(pModule->modman_module_handle, pParam);
 	
 	WaitForSingleObject
-		(pModule->hnd_module_thread, INFINITE);
+		(pModule->modman_module_thread.hnd_module_thread, INFINITE);
 }
 
 void
@@ -49,9 +50,13 @@ __synapse_modules_modman_module_reload
 	}
 }
 
-void
-__synapse_modules_modman_module_retrieve
-	(__synapse_modules_modman*, const char*);
+void*
+__synapse_modules_modman_module_retrieve_procedure
+	(__synapse_modules_modman_module* pModule, const char* pProcName)
+{
+	return
+		GetProcAddress(pModule->hnd_module, pProcName);
+}
 
 char*
 __synapse_modules_modman_module_retrieve_name
