@@ -1,5 +1,6 @@
 #pragma once
 #include <modules/traits/modman_traits.h>
+#include <modules/traits/modman_component_interface.h>
 
 #define synapse_modules_export _declspec(dllexport)
 
@@ -7,7 +8,7 @@ typedef struct synapse_modules_interface
 {
 	char modules_name[255];
 	
-	void (*initialize)(struct synapse_moduels_interface*);
+	void (*initialize)(struct synapse_modules_interface*, synapse_modules_component_interface*);
 	void (*cleanup)   ();
 
 	void

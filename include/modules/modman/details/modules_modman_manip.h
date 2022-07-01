@@ -20,3 +20,7 @@ __synapse_modules_modman_module_retrieve_procedure
 char*
 __synapse_modules_modman_module_retrieve_name
 	(__synapse_modules_modman_module*);
+
+__synapse_modules_modman_module*
+__synapse_modules_modman_module_retrieve
+	(__synapse_modules_modman*, const char*);

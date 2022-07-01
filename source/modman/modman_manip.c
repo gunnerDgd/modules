@@ -45,3 +45,15 @@ synapse_modules_modman_module_retrieve_name
 		__synapse_modules_modman_module_retrieve_name
 			(synapse_modules_opaque_reference(pModule));
 }
+
+synapse_modules_handle
+synapse_modules_modman_module_retrieve
+	(synapse_modules_modman pModman, const char* pName)
+{
+	synapse_modules_opaque_init
+		(synapse_modules_handle, ptr_handle,
+			__synapse_modules_modman_module_retrieve
+				(synapse_modules_opaque_reference(pModman), pName));
+
+	return ptr_handle;
+}
