@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\modules\defines\export.h" />
     <ClInclude Include="..\..\..\..\include\modules\defines\opaque\opaque.h" />
     <ClInclude Include="..\..\..\..\include\modules\traits\modman_component_interface.h" />
     <ClInclude Include="..\..\..\..\include\modules\traits\modman_interface.h" />

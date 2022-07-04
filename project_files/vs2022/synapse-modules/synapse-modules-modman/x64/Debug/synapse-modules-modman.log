@@ -1,15 +1,17 @@
 ﻿  modules_modman_init.c
   modules_modman_manip.c
 E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(21,1): warning C4029: declared formal parameter list different from definition
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(29,52): warning C4133: 'function': incompatible types - from 'void (__cdecl *)(void *)' to '_beginthreadex_proc_type'
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(30,69): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'uintptr_t'
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(36,1): warning C4029: declared formal parameter list different from definition
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(49,1): warning C4029: declared formal parameter list different from definition
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(32,52): warning C4133: 'function': incompatible types - from 'void (__cdecl *)(void *)' to '_beginthreadex_proc_type'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(33,69): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'uintptr_t'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(39,1): warning C4029: declared formal parameter list different from definition
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_manip.c(56,1): warning C4029: declared formal parameter list different from definition
   modules_modman_module_init.c
 E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(13,67): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_modules_handle)'
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(15,72): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_modules_interface *,synapse_modules_component_interface *)'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\modules_modman_module_init.c(15,72): warning C4113: 'FARPROC' differs in parameter lists from 'void (__cdecl *)(synapse_modules_interface *)'
+  modules_modman_module_manip.c
   modman_init.c
   modman_manip.c
   modman_module_init.c
+  modman_module_manip.c
   Generating Code...
   synapse-modules-modman.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\synapse-modules-modman.lib

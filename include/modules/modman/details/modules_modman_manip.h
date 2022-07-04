@@ -13,14 +13,6 @@ void
 __synapse_modules_modman_module_reload
 	(__synapse_modules_modman*, __synapse_modules_modman_module*);
 
-void*
-__synapse_modules_modman_module_retrieve_procedure
-	(__synapse_modules_modman_module*, const char*);
-
-char*
-__synapse_modules_modman_module_retrieve_name
-	(__synapse_modules_modman_module*);
-
 __synapse_modules_modman_module*
 __synapse_modules_modman_module_retrieve
 	(__synapse_modules_modman*, const char*);

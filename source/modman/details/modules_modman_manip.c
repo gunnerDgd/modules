@@ -22,6 +22,9 @@ __synapse_modules_modman_module_attach
 	synapse_modules_opaque_init
 		(synapse_modules_handle, hnd_module, pModule);
 
+	if (!pModule->hnd_module_interface.attach)
+		return;
+
 	pModule->hnd_module_interface.attach
 		(hnd_module, pParam);
 	pModule->modman_module_thread.hnd_module_thread
@@ -36,6 +39,10 @@ __synapse_modules_modman_module_detach
 {
 	synapse_modules_opaque_init
 		(synapse_modules_handle, hnd_module, pModule);
+	
+	if (!pModule->hnd_module_interface.detach)
+		return;
+
 	pModule->hnd_module_interface.detach
 		(hnd_module, pParam);
 	
@@ -53,28 +60,6 @@ __synapse_modules_modman_module_reload
 	if(pModule->hnd_module_interface.reload)
 		pModule->hnd_module_interface.reload
 			(hnd_module, pParam);
-	else {
-		pModule->hnd_module_interface.detach
-			(hnd_module, pParam);
-		pModule->hnd_module_interface.attach
-			(hnd_module, pParam);
-	}
-}
-
-void*
-__synapse_modules_modman_module_retrieve_procedure
-	(__synapse_modules_modman_module* pModule, const char* pProcName)
-{
-	return
-		GetProcAddress(pModule->hnd_module, pProcName);
-}
-
-char*
-__synapse_modules_modman_module_retrieve_name
-	(__synapse_modules_modman_module* pModule)
-{
-	return
-		pModule->hnd_module_interface.modules_name;
 }
 
 __synapse_modules_modman_module*

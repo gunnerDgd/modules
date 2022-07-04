@@ -22,19 +22,23 @@
     <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_init.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_manip.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_module_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_module_manip.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_type.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\modman.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\modman_init.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\modman_manip.h" />
     <ClInclude Include="..\..\..\..\include\modules\modman\modman_module_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman_module_manip.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_init.c" />
     <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_manip.c" />
     <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_module_init.c" />
+    <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_module_manip.c" />
     <ClCompile Include="..\..\..\..\source\modman\modman_init.c" />
     <ClCompile Include="..\..\..\..\source\modman\modman_manip.c" />
     <ClCompile Include="..\..\..\..\source\modman\modman_module_init.c" />
+    <ClCompile Include="..\..\..\..\source\modman\modman_module_manip.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

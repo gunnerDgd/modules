@@ -33,5 +33,8 @@
     <ClInclude Include="..\..\..\..\include\modules\traits\modman_component_interface.h">
       <Filter>Header Files\traits</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\defines\export.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

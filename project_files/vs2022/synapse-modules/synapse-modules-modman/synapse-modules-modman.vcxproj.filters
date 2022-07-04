@@ -51,6 +51,12 @@
     <ClInclude Include="..\..\..\..\include\modules\modman\modman.h">
       <Filter>Header Files\modman</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\modman\details\modules_modman_module_manip.h">
+      <Filter>Header Files\modman\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\modman\modman_module_manip.h">
+      <Filter>Header Files\modman</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_init.c">
@@ -69,6 +75,12 @@
       <Filter>Source Files\modman</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\source\modman\modman_module_init.c">
+      <Filter>Source Files\modman</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\modman\details\modules_modman_module_manip.c">
+      <Filter>Source Files\modman\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\modman\modman_module_manip.c">
       <Filter>Source Files\modman</Filter>
     </ClCompile>
   </ItemGroup>

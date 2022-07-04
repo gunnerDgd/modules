@@ -5,9 +5,9 @@
 typedef struct synapse_modules_component_interface
 {
 	void*
-		(*component_create)   (va_list);
+		(*construct)(va_list);
 	void
-		(*component_delete)   (void*);
+		(*destruct) (void*);
 	void*
-		(*component_duplicate)(void*, va_list);
+		(*duplicate)(void*);
 } synapse_modules_component_interface;

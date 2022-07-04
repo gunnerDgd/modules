@@ -24,8 +24,7 @@ __synapse_modules_modman_module_initialize
 			(pModman->modman_mman);
 
 	ptr_modhnd->hnd_module_interface.initialize
-		(&ptr_modhnd->hnd_module_interface, 
-		 &ptr_modhnd->modman_module_component_interface);
+		(&ptr_modhnd->hnd_module_interface);
 
 	return
 		ptr_modhnd;

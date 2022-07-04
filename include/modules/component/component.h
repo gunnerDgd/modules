@@ -5,10 +5,18 @@
 #include <modules/component/component_type.h>
 #include <modules/traits/modman_interface.h>
 
-synapse_modules_component
+synapse_modules_component_handle
 synapse_modules_component_initialize
-	(synapse_modules_handle, int, ...);
+	(synapse_modules_handle, synapse_modules_component_interface_handle, int, ...);
+
+synapse_modules_component_handle
+synapse_modules_component_initialize_from_vargs
+	(synapse_modules_handle, synapse_modules_component_interface_handle, va_list);
 
 void
 synapse_modules_component_cleanup
-	(synapse_modules_component);
+	(synapse_modules_handle, synapse_modules_component_handle);
+
+void*
+synapse_modules_component_retrieve_object
+	(synapse_modules_component_handle);

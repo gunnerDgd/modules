@@ -8,7 +8,7 @@ typedef struct synapse_modules_interface
 {
 	char modules_name[255];
 	
-	void (*initialize)(struct synapse_modules_interface*, synapse_modules_component_interface*);
+	void (*initialize)(struct synapse_modules_interface*);
 	void (*cleanup)   ();
 
 	void

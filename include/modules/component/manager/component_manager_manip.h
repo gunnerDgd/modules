@@ -1,10 +1,15 @@
 #pragma once
 #include <modules/component/component_type.h>
+#include <modules/traits/modman_component_interface.h>
+
+synapse_modules_component_interface_handle
+synapse_modules_component_manager_register_interface
+	(synapse_modules_component_manager, synapse_modules_component_interface, const char*);
 
 void
-synapse_modules_component_manager_push_component
-	(synapse_modules_component_manager, synapse_modules_component);
+synapse_modules_component_manager_unregister_interface
+	(synapse_modules_component_manager, synapse_modules_component_interface_handle);
 
-void
-synapse_modules_component_manager_pop_component
-	(synapse_modules_component_manager, synapse_modules_component);
+synapse_modules_component_interface_handle
+synapse_modules_component_manager_retrieve_interface
+	(synapse_modules_component_manager, const char*);

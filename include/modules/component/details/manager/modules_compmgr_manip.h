@@ -1,10 +1,14 @@
 #pragma once
 #include <modules/component/details/modules_component_type.h>
 
-void
-__synapse_modules_component_manager_push_component
-	(__synapse_modules_component_manager*, __synapse_modules_component*);
+__synapse_modules_component_interface*
+__synapse_modules_component_manager_register_interface
+	(__synapse_modules_component_manager*, synapse_modules_component_interface, const char*);
 
 void
-__synapse_modules_component_manager_pop_component
-	(__synapse_modules_component_manager*, __synapse_modules_component*);
+__synapse_modules_component_manager_unregister_interface
+	(__synapse_modules_component_manager*, __synapse_modules_component_interface*);
+
+__synapse_modules_component_interface*
+__synapse_modules_component_manager_retrieve_interface
+	(__synapse_modules_component_manager*, const char*);

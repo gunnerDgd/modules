@@ -30,8 +30,6 @@ typedef struct __synapse_modules_modman_module
 		modman_module_handle   ;
 	synapse_modules_component_manager
 		modman_module_component_manager;
-	synapse_modules_component_interface
-		modman_module_component_interface;
 	__synapse_modules_modman_module_thread
 		modman_module_thread   ;
 
