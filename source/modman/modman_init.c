@@ -1,6 +1,7 @@
 #include <modules/modman/modman_init.h>
 #include <modules/modman/details/modules_modman_init.h>
 
+synapse_modules_export
 synapse_modules_modman
 synapse_modules_modman_initialize
 	(synapse_memory_mman_traits* pMman)
@@ -14,6 +15,7 @@ synapse_modules_modman_initialize
 		ptr_modman;
 }
 
+synapse_modules_export
 void
 synapse_modules_modman_cleanup
 	(synapse_modules_modman pModMan)

@@ -3,11 +3,19 @@
 
 __synapse_modules_component_interface*
 __synapse_modules_component_manager_register_interface
-	(__synapse_modules_component_manager*, synapse_modules_component_interface, const char*);
+	(__synapse_modules_component_manager*, synapse_modules_component_interface, const char*, void*);
 
 void
 __synapse_modules_component_manager_unregister_interface
 	(__synapse_modules_component_manager*, __synapse_modules_component_interface*);
+
+void
+__synapse_modules_component_manager_register_component
+	(__synapse_modules_component_manager*, __synapse_modules_component*);
+
+void
+__synapse_modules_component_manager_unregister_component
+	(__synapse_modules_component_manager*, __synapse_modules_component*);
 
 __synapse_modules_component_interface*
 __synapse_modules_component_manager_retrieve_interface

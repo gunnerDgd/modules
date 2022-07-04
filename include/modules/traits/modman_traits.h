@@ -1,5 +1,6 @@
 #pragma once
 #include <modules/defines/opaque/opaque.h>
+#include <modules/defines/export.h>
 
 synapse_modules_opaque_declare
 	(synapse_modules_modman)

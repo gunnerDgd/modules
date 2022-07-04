@@ -7,7 +7,8 @@ __synapse_modules_component_interface*
 __synapse_modules_component_manager_register_interface
 	(__synapse_modules_component_manager* pCompMgr, 
 	 synapse_modules_component_interface  pCompInterface,
-	 const char							 *pCompInterfaceName)
+	 const char							 *pCompInterfaceName,
+	 void								 *pCompInterfaceType)
 {
 	__synapse_modules_component_interface*
 		ptr_interface
@@ -20,6 +21,8 @@ __synapse_modules_component_manager_register_interface
 		= pCompInterface.destruct;
 	ptr_interface->ptr_interface_duplicate
 		= pCompInterface.duplicate;
+	ptr_interface->ptr_component_interface_type
+		= pCompInterfaceType;
 
 	ptr_interface->hnd_component_interface =
 		synapse_structure_double_linked_insert_back
@@ -44,6 +47,26 @@ __synapse_modules_component_manager_unregister_interface
 
 	free
 		(pCompInterface);
+}
+
+void
+__synapse_modules_component_manager_register_component
+	(__synapse_modules_component_manager *pCompMgr, 
+	 __synapse_modules_component		 *pComponent)
+{
+	pComponent->hnd_component
+		= synapse_structure_double_linked_insert_back
+				(pCompMgr->hnd_component_slot, &pComponent, 
+					sizeof(__synapse_modules_component*));
+}
+
+void
+__synapse_modules_component_manager_unregister_component
+	(__synapse_modules_component_manager *pCompMgr,
+	 __synapse_modules_component		 *pComponent)
+{
+	synapse_structure_double_linked_erase_node
+		(pCompMgr->hnd_component_slot, pComponent->hnd_component);
 }
 
 __synapse_modules_component_interface*

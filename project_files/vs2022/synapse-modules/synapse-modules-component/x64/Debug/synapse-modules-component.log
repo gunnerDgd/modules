@@ -1,10 +1,13 @@
 ﻿  component.c
   modules_compmgr_init.c
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_init.c(45,15): warning C4133: 'function': incompatible types - from '__synapse_modules_component_manager *' to '__synapse_modules_component *'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_init.c(45,17): warning C4020: '__synapse_modules_component_cleanup': too many actual parameters
   modules_compmgr_manip.c
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_manip.c(29,47): warning C4090: 'function': different 'const' qualifiers
-E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_manip.c(28,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_manip.c(32,47): warning C4090: 'function': different 'const' qualifiers
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\component\details\manager\modules_compmgr_manip.c(31,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   modules_component.c
   component_manager_init.c
   component_manager_manip.c
   Generating Code...
-  synapse-modules-component.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\synapse-modules-component.lib
+     Creating library E:\Programming\C++\Projects\Experimental\synapse-modules\bin\x64\debug\synapse-modules-component.lib and object E:\Programming\C++\Projects\Experimental\synapse-modules\bin\x64\debug\synapse-modules-component.exp
+  synapse-modules-component.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\bin\x64\debug\synapse-modules-component.dll

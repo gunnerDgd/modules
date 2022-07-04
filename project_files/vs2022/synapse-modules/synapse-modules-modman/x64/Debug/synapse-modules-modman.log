@@ -14,4 +14,4 @@ E:\Programming\C++\Projects\Experimental\synapse-modules\source\modman\details\m
   modman_module_init.c
   modman_module_manip.c
   Generating Code...
-  synapse-modules-modman.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\synapse-modules-modman.lib
+  synapse-modules-modman.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\bin\x64\debug\synapse-modules-modman.dll

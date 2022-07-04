@@ -1,6 +1,7 @@
 #include <modules/modman/modman_module_init.h>
 #include <modules/modman/details/modules_modman_module_init.h>
 
+synapse_modules_export
 synapse_modules_handle
 synapse_modules_modman_module_initialize
 	(synapse_modules_modman pModMan, const char* pModule)
@@ -15,6 +16,7 @@ synapse_modules_modman_module_initialize
 		ptr_modhnd;
 }
 
+synapse_modules_export
 void
 synapse_modules_modman_module_cleanup
 	(synapse_modules_modman pModMan, synapse_modules_handle pModule)

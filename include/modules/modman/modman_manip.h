@@ -4,18 +4,22 @@
 
 #include <modules/component/component_type.h>
 
+synapse_modules_export
 void
 synapse_modules_modman_module_attach
 	(synapse_modules_modman, synapse_modules_handle, void*);
 
+synapse_modules_export
 void
 synapse_modules_modman_module_detach
 	(synapse_modules_modman, synapse_modules_handle, void*);
 
+synapse_modules_export
 void
 synapse_modules_modman_module_reload
 	(synapse_modules_modman, synapse_modules_handle, void*);
 
+synapse_modules_export
 synapse_modules_handle
 synapse_modules_modman_module_retrieve
 	(synapse_modules_modman, const char*);

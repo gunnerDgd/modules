@@ -19,6 +19,8 @@ typedef struct __synapse_modules_component_interface
 {
 	__synapse_modules_component_manager_interface_node
 		hnd_component_interface;
+	void*
+		ptr_component_interface_type;
 	const char
 		ptr_component_interface_name[255];
 	
