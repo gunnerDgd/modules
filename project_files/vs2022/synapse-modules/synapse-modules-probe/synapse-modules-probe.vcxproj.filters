@@ -14,29 +14,44 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Header Files\details">
-      <UniqueIdentifier>{8fa81e1a-95c8-4d0f-a3a7-9428800b9b55}</UniqueIdentifier>
+      <UniqueIdentifier>{7d2ebb28-7c02-4ac2-b2e2-c850ec97cfd8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\details">
-      <UniqueIdentifier>{0e69b870-c4fb-4305-b1ba-06c402601392}</UniqueIdentifier>
+      <UniqueIdentifier>{b647e422-dfb3-4fe4-a2ca-e516371ed67a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_type.h">
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_type.h">
       <Filter>Header Files\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_init.h">
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_manip.h">
       <Filter>Header Files\details</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_init.h">
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_init.h">
+      <Filter>Header Files\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\modules\probe\probe_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_manip.h">
+    <ClInclude Include="..\..\..\..\include\modules\probe\probe_init.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\details\details_modules_init.c">
+    <ClCompile Include="..\..\..\..\source\probe\details\details_probe_init.c">
       <Filter>Source Files\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\probe\details\details_probe_manip.c">
+      <Filter>Source Files\details</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\probe\probe_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\modules_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\modules_manip.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

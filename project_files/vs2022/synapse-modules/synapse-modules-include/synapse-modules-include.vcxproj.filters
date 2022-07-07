@@ -13,30 +13,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\details">
-      <UniqueIdentifier>{8fa81e1a-95c8-4d0f-a3a7-9428800b9b55}</UniqueIdentifier>
+    <Filter Include="Header Files\interface">
+      <UniqueIdentifier>{3c604eed-4648-46c4-a871-72c3a0f1b1eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\details">
-      <UniqueIdentifier>{0e69b870-c4fb-4305-b1ba-06c402601392}</UniqueIdentifier>
+    <Filter Include="Header Files\defines">
+      <UniqueIdentifier>{cb8a379b-a217-4030-9a3c-eff8f27b2b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\defines\export">
+      <UniqueIdentifier>{fac92a10-43c7-44d5-a4f1-99206dc26e0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_type.h">
-      <Filter>Header Files\details</Filter>
+    <ClInclude Include="..\..\..\..\include\modules\interface\modules.h">
+      <Filter>Header Files\interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_init.h">
-      <Filter>Header Files\details</Filter>
+    <ClInclude Include="..\..\..\..\include\modules\defines\handle\opaque_handle.h">
+      <Filter>Header Files\defines</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_init.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\..\..\include\modules\defines\export\export.h">
+      <Filter>Header Files\defines\export</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_manip.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\details\details_modules_init.c">
-      <Filter>Source Files\details</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

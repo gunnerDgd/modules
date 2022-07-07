@@ -13,30 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\details">
-      <UniqueIdentifier>{8fa81e1a-95c8-4d0f-a3a7-9428800b9b55}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\details">
-      <UniqueIdentifier>{0e69b870-c4fb-4305-b1ba-06c402601392}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_type.h">
-      <Filter>Header Files\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_init.h">
-      <Filter>Header Files\details</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_init.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\include\modules\modules_manip.h">
+    <ClInclude Include="..\..\..\..\include\modules\modules.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\details\details_modules_init.c">
-      <Filter>Source Files\details</Filter>
+    <ClCompile Include="..\..\..\..\source\modules.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

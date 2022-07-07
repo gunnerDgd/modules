@@ -19,19 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_init.h" />
-    <ClInclude Include="..\..\..\..\include\modules\details\modules_type.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modules_init.h" />
-    <ClInclude Include="..\..\..\..\include\modules\modules_manip.h" />
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_manip.h" />
+    <ClInclude Include="..\..\..\..\include\modules\probe\details\probe_type.h" />
+    <ClInclude Include="..\..\..\..\include\modules\probe\probe_init.h" />
+    <ClInclude Include="..\..\..\..\include\modules\probe\probe_type.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\details\details_modules_init.c" />
+    <ClCompile Include="..\..\..\..\source\modules_init.c" />
+    <ClCompile Include="..\..\..\..\source\modules_manip.c" />
+    <ClCompile Include="..\..\..\..\source\probe\details\details_probe_init.c" />
+    <ClCompile Include="..\..\..\..\source\probe\details\details_probe_manip.c" />
+    <ClCompile Include="..\..\..\..\source\probe\probe_init.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d818ba57-9be3-4823-ac1c-00a297e1613d}</ProjectGuid>
-    <RootNamespace>synapsemodules</RootNamespace>
+    <ProjectGuid>{e6febc6f-2f00-4867-a680-d489626f9c57}</ProjectGuid>
+    <RootNamespace>synapsemodulesprobe</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -80,7 +85,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-memory\include;E:\Programming\C++\Projects\Experimental\synapse-modules\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Programming\C++\Projects\Experimental\synapse-memory\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;E:\Programming\C++\Projects\Experimental\synapse-modules\include;$(IncludePath)</IncludePath>
     <OutDir>E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
