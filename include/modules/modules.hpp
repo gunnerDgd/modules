@@ -8,10 +8,6 @@ extern "C"
 #include <string>
 
 namespace synapse::modules {
-	void
-		initialize();
-	void
-		cleanup   ();
 
 	class modules
 	{

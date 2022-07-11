@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\synapse\include\synapse\__internal\modules\init.h" />
     <ClInclude Include="..\..\..\..\include\modules\modules.h" />
   </ItemGroup>
   <ItemGroup>
@@ -77,7 +78,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\Programming\C++\Projects\synapse\include;E:\Programming\C++\Projects\Experimental\synapse-memory\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;E:\Programming\C++\Projects\Experimental\synapse-modules\include;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Programming\C++\Projects\synapse\include;E:\Programming\C++\Projects\Experimental\synapse-structure\include;E:\Programming\C++\Projects\Experimental\synapse-modules\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Programming\C++\Projects\Experimental\synapse-memory\libs\x64\debug;E:\Programming\C++\Projects\Experimental\synapse-structure\libs\x64\debug\lib-list;E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug;$(LibraryPath)</LibraryPath>
     <OutDir>E:\Programming\C++\Projects\synapse\bin\x64\debug\</OutDir>
   </PropertyGroup>
@@ -128,7 +129,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>E:\Programming\C++\Projects\synapse\libs\x64\debug\modules\*.lib;E:\Programming\C++\Projects\synapse\libs\x64\debug\memory\*.lib;synapse-structure-dlist.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\Programming\C++\Projects\synapse\libs\x64\debug\modules\*.lib;E:\Programming\C++\Projects\synapse\libs\x64\debug\memory\*.lib;E:\Programming\C++\Projects\synapse\libs\x64\debug\dll_lib\synapse-memory-mman-dll.lib;synapse-structure-dlist.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

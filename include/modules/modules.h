@@ -1,17 +1,6 @@
 #pragma once
-#include <synapse/modules/defines/export/export.h>
-#include <synapse/modules/interface/modules.h>
-
-synapse_modules_dll
-	void
-		synapse_modules_initialize_system
-			();
-
-synapse_modules_dll
-	void
-		synapse_modules_cleanup_system
-			();
-
+#include <modules/defines/export/export.h>
+#include <modules/interface/modules.h>
 
 synapse_modules_dll
 	synapse_modules

@@ -1,2 +1,4 @@
-﻿     Creating library E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.lib and object E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.exp
+﻿  modules.c
+  LINK : program database E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.pdb missing; performing full link
+     Creating library E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.lib and object E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.exp
   synapse-modules-dll.vcxproj -> E:\Programming\C++\Projects\synapse\bin\x64\debug\synapse-modules-dll.dll

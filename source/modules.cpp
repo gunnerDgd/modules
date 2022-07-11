@@ -1,20 +1,6 @@
 #include <modules/modules.hpp>
 #include <modules/exception.hpp>
 
-void
-	synapse::modules::initialize()
-{
-	synapse_modules_initialize_system
-		();
-}
-
-void
-	synapse::modules::cleanup()
-{
-	synapse_modules_cleanup_system
-		();
-}
-
 synapse::modules::modules::modules
 	(path_type pModulePath)
 		: __M_modules_handle

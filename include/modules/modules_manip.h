@@ -1,5 +1,5 @@
 #pragma once
-#include <synapse/modules/interface/modules.h>
+#include <modules/interface/modules.h>
 #include <modules/probe/probe_type.h>
 
 int

@@ -1,6 +1,6 @@
 #pragma once
-#include <modules/probe/probe_type.h>
 #include <synapse/memory/interface/memory_manager.h>
+#include <modules/probe/probe_type.h>
 
 synapse_modules_probe
 	synapse_modules_probe_initialize

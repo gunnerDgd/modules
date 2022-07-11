@@ -1,6 +1,4 @@
 #pragma once
-#include <synapse/modules/interface/modules.h>
-
 #include <modules/details/modules_type.h>
 #include <structure/list/double_linked.h>
 

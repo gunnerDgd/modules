@@ -1,5 +1,5 @@
 #pragma once
-#include <synapse/modules/interface/modules.h>
+#include <modules/interface/modules.h>
 #include <synapse/memory/interface/memory_manager.h>
 
 #include <Windows.h>
