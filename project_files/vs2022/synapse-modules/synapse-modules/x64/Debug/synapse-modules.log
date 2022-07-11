@@ -1,1 +1,4 @@
-﻿  synapse-modules.vcxproj -> E:\Programming\C++\Projects\Experimental\synapse-modules\libs\x64\debug\synapse-modules.lib
+﻿  details_modules_init.c
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\details\details_modules_init.c(34,61): warning C4113: 'FARPROC' differs in parameter lists from 'int (__cdecl *)(synapse_modules_metadata *,synapse_modules_traits *)'
+E:\Programming\C++\Projects\Experimental\synapse-modules\source\details\details_modules_init.c(34,61): warning C4133: '=': incompatible types - from 'FARPROC' to 'int (__cdecl *)(synapse_modules_metadata *,synapse_modules_traits *)'
+  synapse-modules.vcxproj -> E:\Programming\C++\Projects\synapse\libs\x64\debug\modules\synapse-modules.lib

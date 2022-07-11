@@ -1,13 +1,13 @@
 #pragma once
-#include <modules/interface/modules.h>
-#include <memory/mman/mman_traits.h>
+#include <synapse/modules/interface/modules.h>
+#include <synapse/memory/interface/memory_manager.h>
 
 #include <Windows.h>
 
 typedef struct
 	__synapse_modules
 {
-	synapse_memory_mman_block
+	synapse_memory_block
 		mod_mblock;
 
 	synapse_modules_metadata

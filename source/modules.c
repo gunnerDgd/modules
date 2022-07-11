@@ -1,7 +1,8 @@
 #include <modules/modules.h>
 
-#include <memory/mman/mman_traits.h>
-#include <memory/mman/standard_heap/stdheap.h>
+
+#include <synapse/memory/interface/memory_manager.h>
+#include <synapse/memory/standard_heap.h>
 
 #include <modules/probe/probe_init.h>
 #include <modules/probe/details/probe_manip.h>
@@ -9,9 +10,8 @@
 #include <modules/modules_init.h>
 #include <modules/modules_manip.h>
 
-static synapse_memory_mman_traits
-			*__synapse_modules_mman,
-			*__synapse_modules_mman_probe;
+static synapse_memory_manager
+			*__synapse_modules_mman;
 static synapse_modules_probe
 			__synapse_modules_probe_handle;
 
@@ -21,13 +21,11 @@ synapse_modules_dll
 			()
 {
 	__synapse_modules_mman
-		= synapse_memory_mman_stdheap_initialize_traits();
-	__synapse_modules_mman_probe
-		= synapse_memory_mman_stdheap_initialize_traits();
+		= synapse_initialize_standard_heap();
 
 	__synapse_modules_probe_handle
 		= synapse_modules_probe_initialize
-				(__synapse_modules_mman, __synapse_modules_mman_probe);
+				(__synapse_modules_mman);
 }
 
 synapse_modules_dll

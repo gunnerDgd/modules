@@ -1,10 +1,10 @@
 #pragma once
 #include <modules/probe/probe_type.h>
-#include <memory/mman/mman_traits.h>
+#include <synapse/memory/interface/memory_manager.h>
 
 synapse_modules_probe
 	synapse_modules_probe_initialize
-		(synapse_memory_mman_traits*, synapse_memory_mman_traits*);
+		(synapse_memory_manager*);
 
 void
 	synapse_modules_probe_cleanup

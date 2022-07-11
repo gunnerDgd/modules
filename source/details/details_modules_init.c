@@ -2,13 +2,15 @@
 
 __synapse_modules*
 	__synapse_modules_initialize
-		(synapse_memory_mman_traits* pMman, const char* pModulePath, int* pErrorCode)
+		(synapse_memory_manager* pMman, 
+			const char* pModulePath, int* pErrorCode)
 {
 	HMODULE
 		hnd_module
 			= LoadLibraryA(pModulePath);
-	synapse_memory_mman_block
+	synapse_memory_block
 		hnd_module_memory;
+
 	__synapse_modules*
 		ptr_module;
 	int
@@ -60,7 +62,7 @@ __init_success:
 
 void
 	__synapse_modules_cleanup
-		(synapse_memory_mman_traits* pMman, __synapse_modules* pModules)
+		(synapse_memory_manager* pMman, __synapse_modules* pModules)
 {
 	pModules->mod_cleanup();
 

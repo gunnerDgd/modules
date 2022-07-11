@@ -1,13 +1,13 @@
 #pragma once
-#include <modules/interface/modules.h>
-#include <modules/details/modules_type.h>
+#include <synapse/modules/interface/modules.h>
 
+#include <modules/details/modules_type.h>
 #include <structure/list/double_linked.h>
 
 typedef struct
 	__synapse_modules_probe_modules
 {
-	synapse_memory_mman_block
+	synapse_memory_block
 		prb_module_mblock;
 	synapse_structure_double_linked_node
 		prb_module_handle;
@@ -21,8 +21,8 @@ typedef struct
 {
 	synapse_structure_double_linked
 		prb_handle;
-	synapse_memory_mman_block
+	synapse_memory_block
 		prb_mblock;
-	synapse_memory_mman_traits*
+	synapse_memory_manager*
 		prb_mman;
 } __synapse_modules_probe;

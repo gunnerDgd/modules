@@ -3,8 +3,8 @@
 
 __synapse_modules*
 	__synapse_modules_initialize
-		(synapse_memory_mman_traits*, const char*, int*);
+		(synapse_memory_manager*, const char*, int*);
 
 void
 	__synapse_modules_cleanup
-		(synapse_memory_mman_traits*, __synapse_modules*);
+		(synapse_memory_manager*, __synapse_modules*);

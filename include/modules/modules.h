@@ -1,8 +1,6 @@
 #pragma once
-#include <modules/defines/export/export.h>
-
-#include <modules/modules_init.h>
-#include <modules/probe/probe_init.h>
+#include <synapse/modules/defines/export/export.h>
+#include <synapse/modules/interface/modules.h>
 
 synapse_modules_dll
 	void

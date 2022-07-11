@@ -3,8 +3,8 @@
 
 __synapse_modules_probe*
 	__synapse_modules_probe_initialize
-		(synapse_memory_mman_traits*, synapse_memory_mman_traits*);
+		(synapse_memory_manager*);
 
 void
 	__synapse_modules_probe_cleanup
-		(synapse_memory_mman_traits*, __synapse_modules_probe*);
+		(__synapse_modules_probe*);

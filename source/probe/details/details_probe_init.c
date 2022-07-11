@@ -3,10 +3,9 @@
 
 __synapse_modules_probe*
 	__synapse_modules_probe_initialize
-		(synapse_memory_mman_traits* pMman, 
-		 synapse_memory_mman_traits* pMmanProbe)
+		(synapse_memory_manager* pMman)
 {
-	synapse_memory_mman_block
+	synapse_memory_block
 		hnd_mblock
 			= pMman->allocate
 				(pMman->hnd_mman, NULL, sizeof(__synapse_modules_probe));
@@ -17,13 +16,13 @@ __synapse_modules_probe*
 					(hnd_mblock);
 
 	ptr_probe->prb_mman
-		= pMmanProbe;
+		= pMman;
 	ptr_probe->prb_mblock
 		= hnd_mblock;
 
 	ptr_probe->prb_handle
 		= synapse_structure_double_linked_initialize
-				(pMmanProbe);
+				(pMman);
 
 	return
 		ptr_probe;
@@ -31,7 +30,7 @@ __synapse_modules_probe*
 
 void
 	__synapse_modules_probe_cleanup
-		(synapse_memory_mman_traits* pMman, __synapse_modules_probe* pProbe)
+		(__synapse_modules_probe* pProbe)
 {
 	synapse_structure_double_linked_node
 		ptr_seek
@@ -49,13 +48,10 @@ void
 
 		__synapse_modules_cleanup
 			(pProbe->prb_mman, ptr_module->prb_module);
-		synapse_structure_double_linked_erase_at
-			(pProbe->prb_handle, ptr_module->prb_module_handle);
-
-		pProbe->prb_mman->deallocate
-			(pProbe->prb_mman->hnd_mman, ptr_module->prb_module_mblock);
 	}
 
-	pMman->deallocate
-		(pMman->hnd_mman, pProbe->prb_mblock);
+	synapse_structure_double_linked_cleanup
+		(pProbe->prb_handle);
+	pProbe->prb_mman->deallocate
+		(pProbe->prb_mman->hnd_mman, pProbe->prb_mblock);
 }

@@ -7,7 +7,7 @@ __synapse_modules_probe_modules*
 	__synapse_modules_probe_load_module
 		(__synapse_modules_probe* pProbe, const char* pModulePath)
 {
-	synapse_memory_mman_block
+	synapse_memory_block
 		hnd_mblock;
 	__synapse_modules_probe_modules*
 		ptr_modules_probe;
