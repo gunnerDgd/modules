@@ -23,4 +23,6 @@ typedef struct
 		prb_mblock;
 	synapse_memory_manager*
 		prb_mman;
+	DWORD
+		prb_thread_id;
 } __synapse_modules_probe;

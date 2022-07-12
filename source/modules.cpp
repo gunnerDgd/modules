@@ -21,6 +21,15 @@ synapse::modules::modules::modules
 				throw exception::module_not_loaded {};
 }
 
+synapse::modules::modules::modules
+	(modules&& pMove)
+		: __M_modules_handle
+				(pMove.__M_modules_handle)
+{
+	pMove.__M_modules_handle.opaque
+				= nullptr;
+}
+
 synapse::modules::modules::~modules()
 {
 	synapse_unload_modules

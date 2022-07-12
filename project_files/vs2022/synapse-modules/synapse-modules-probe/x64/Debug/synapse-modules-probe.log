@@ -1,2 +1,7 @@
-﻿  probe_init.c
+﻿  modules_init.c
+  modules_manip.c
+  details_probe_init.c
+  details_probe_manip.c
+  probe_init.c
+  Generating Code...
   synapse-modules-probe.vcxproj -> E:\Programming\C++\Projects\synapse\libs\x64\debug\modules\synapse-modules-probe.lib

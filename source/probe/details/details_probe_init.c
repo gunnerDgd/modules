@@ -23,6 +23,8 @@ __synapse_modules_probe*
 	ptr_probe->prb_handle
 		= synapse_structure_double_linked_initialize
 				(pMman);
+	ptr_probe->prb_thread_id
+		= GetCurrentThreadId();
 
 	return
 		ptr_probe;
@@ -36,6 +38,9 @@ void
 		ptr_seek
 			= synapse_structure_double_linked_node_begin
 					(pProbe->prb_handle);
+
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return;
 
 	for ( ; ptr_seek.opaque
 		  ; ptr_seek = synapse_structure_double_linked_node_next(ptr_seek))

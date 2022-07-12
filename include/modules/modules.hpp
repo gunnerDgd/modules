@@ -21,6 +21,9 @@ namespace synapse::modules {
 	public:
 		modules (path_type);
 		modules (name_type);
+		
+		modules (const modules&)  = delete;
+		modules (modules&&);
 		~modules();
 
 	public:

@@ -15,9 +15,14 @@ __synapse_modules_probe_modules*
 	int
 		res_modules_initialize;
 	__synapse_modules*
-		ptr_modules
-			= __synapse_modules_initialize
-					(pProbe->prb_mman, pModulePath, &res_modules_initialize);
+		ptr_modules;
+
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return NULL;
+
+	ptr_modules
+		= __synapse_modules_initialize
+				(pProbe->prb_mman, pModulePath, &res_modules_initialize);
 
 	if (!ptr_modules) return NULL;
 
@@ -44,6 +49,9 @@ void
 	__synapse_modules_probe_unload_module
 		(__synapse_modules_probe* pProbe, __synapse_modules_probe_modules* pModules)
 {
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return;
+
 	__synapse_modules_cleanup
 		(pProbe->prb_mman, pModules->prb_module);
 	synapse_structure_double_linked_erase_at
@@ -61,6 +69,9 @@ __synapse_modules_probe_modules*
 		ptr_seek
 			= synapse_structure_double_linked_node_begin
 					(pProbe->prb_handle);
+
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return NULL;
 
 	for ( ; ptr_seek.opaque
 		  ; ptr_seek = synapse_structure_double_linked_node_next(ptr_seek))
@@ -87,6 +98,9 @@ int
 {
 	synapse_modules_opaque_handle_init
 		(synapse_modules, hnd_modules, pModules);
+	
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return -1;
 
 	int
 		res_attach
@@ -105,6 +119,9 @@ int
 	synapse_modules_opaque_handle_init
 		(synapse_modules, hnd_modules, pModules);
 
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return -1;
+
 	int
 		res_detach
 			= (pModules->prb_module->mod_traits.detach)
@@ -121,6 +138,9 @@ int
 {
 	synapse_modules_opaque_handle_init
 		(synapse_modules, hnd_modules, pModules);
+
+	if (pProbe->prb_thread_id != GetCurrentThreadId())
+		return -1;
 
 	int
 		res_reload
