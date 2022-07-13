@@ -28,3 +28,9 @@ target_link_libraries(
     synapse_modules_lib_cpp
     synapse_modules_dll
 )
+
+target_compile_options(
+  synapse_modules_lib_cpp
+  PUBLIC
+  /std:c++17
+)
