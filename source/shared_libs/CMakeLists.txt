@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+
 project(
   synapse-modules-dll
   VERSION 0.1.0
