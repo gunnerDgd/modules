@@ -6,10 +6,15 @@ project(
   LANGUAGES C
 )
 
+file(
+    GLOB_RECURSE src_synapse_modules_lib CONFIGURE_DEPENDS
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.c
+)
+
 add_library(
   synapse_modules_lib
   STATIC
-  ${CMAKE_CURRENT_SOURCE_DIR}/*.c
+  ${src_synapse_modules_lib}
 )
 
 target_include_directories(

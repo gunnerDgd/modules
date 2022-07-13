@@ -9,7 +9,7 @@ project(
 add_library(
     synapse_modules_lib_cpp
     STATIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/modules.cpp
 )
 
 target_include_directories(

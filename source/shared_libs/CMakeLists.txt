@@ -9,7 +9,7 @@ project(
 add_library(
     synapse_modules_dll
     SHARED
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/modules.c
 )
 
 target_include_directories(
@@ -34,6 +34,6 @@ target_compile_options(
 )
 
 target_link_libraries(
-    synapse_modules_dll,
+    synapse_modules_dll
     synapse_memory_dll
 )
