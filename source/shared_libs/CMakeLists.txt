@@ -24,8 +24,16 @@ target_include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../cpp)
 target_link_libraries(
-    synapse_modules_lib_cpp
     synapse_modules_dll
+    synapse_modules_lib
+)
+
+target_compile_options(
+    synapse_modules_dll PRIVATE /Dsynapse_modules_export_mode
+)
+
+target_link_libraries(
+    synapse_modules_dll,
+    synapse_memory_dll
 )

@@ -23,3 +23,8 @@ target_include_directories(
   PUBLIC 
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )
+
+target_link_libraries(
+    synapse_modules_lib_cpp
+    synapse_modules_dll
+)
