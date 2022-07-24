@@ -1,4 +1,5 @@
 #include <modules/details/modules_init.h>
+#include <synapse/memory/memory.h>
 
 __synapse_modules*
 	__synapse_modules_initialize
@@ -6,30 +7,19 @@ __synapse_modules*
 			const char* pModulePath, int* pErrorCode)
 {
 	HMODULE
-		hnd_module
-			= LoadLibraryA(pModulePath);
-	synapse_memory_block
-		hnd_module_memory;
-
+		hnd_module = LoadLibraryA(pModulePath);
 	__synapse_modules*
 		ptr_module;
 	int
 		res_module_initialize;
 
 	if (!hnd_module) return NULL;
-
-	hnd_module_memory
-		= pMman->allocate
-			(pMman->hnd_mman, NULL, sizeof(__synapse_modules));
 	ptr_module
-		= pMman->block_pointer
-			(hnd_module_memory);
+		= synapse_system_allocate
+				(sizeof(__synapse_modules));
 
-	ptr_module->mod_mblock
-		= hnd_module_memory;
 	ptr_module->mod_handle
 		= hnd_module;
-
 	ptr_module->mod_initialize
 		= GetProcAddress(hnd_module, "synapse_modules_initialize");
 	ptr_module->mod_cleanup
@@ -51,9 +41,10 @@ __synapse_modules*
 		goto __init_success;
 
 __init_failed:
-	FreeLibrary(hnd_module);
-	pMman->deallocate
-		(pMman->hnd_mman, hnd_module_memory);
+	FreeLibrary
+		(hnd_module);
+	synapse_system_deallocate
+		(ptr_module);
 
 	return NULL;
 __init_success:
@@ -68,6 +59,6 @@ void
 
 	FreeLibrary
 		(pModules->mod_handle);
-	pMman->deallocate
-		(pMman->hnd_mman, pModules->mod_mblock);
+	synapse_system_deallocate
+		(pModules);
 }

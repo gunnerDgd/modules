@@ -1,24 +1,20 @@
 #include <modules/probe/details/probe_manip.h>
 #include <modules/details/modules_init.h>
 
+#include <synapse/memory/memory.h>
+
 #include <string.h>
 
 __synapse_modules_probe_modules*
 	__synapse_modules_probe_load_module
 		(__synapse_modules_probe* pProbe, const char* pModulePath)
 {
-	synapse_memory_block
-		hnd_mblock;
 	__synapse_modules_probe_modules*
 		ptr_modules_probe;
-
 	int
 		res_modules_initialize;
 	__synapse_modules*
 		ptr_modules;
-
-	if (pProbe->prb_thread_id != GetCurrentThreadId())
-		return NULL;
 
 	ptr_modules
 		= __synapse_modules_initialize
@@ -26,19 +22,16 @@ __synapse_modules_probe_modules*
 
 	if (!ptr_modules) return NULL;
 
-	hnd_mblock
-		= pProbe->prb_mman->allocate
-				(pProbe->prb_mman->hnd_mman, NULL, sizeof(__synapse_modules_probe_modules));
 	ptr_modules_probe
-		= pProbe->prb_mman->block_pointer
-				(hnd_mblock);
+		= synapse_system_allocate
+				(sizeof(__synapse_modules_probe_modules));
 
+	ptr_modules_probe->prb_module_thread_id
+		= GetCurrentThreadId();
 	ptr_modules_probe->prb_module
 		= ptr_modules;
-	ptr_modules_probe->prb_module_mblock
-		= hnd_mblock;
 	ptr_modules_probe->prb_module_handle
-		= synapse_structure_double_linked_insert_back
+		= synapse_double_linked_insert_back
 				(pProbe->prb_handle, &ptr_modules_probe, sizeof(__synapse_modules_probe_modules*));
 
 	return
@@ -49,37 +42,41 @@ void
 	__synapse_modules_probe_unload_module
 		(__synapse_modules_probe* pProbe, __synapse_modules_probe_modules* pModules)
 {
-	if (pProbe->prb_thread_id != GetCurrentThreadId())
-		return;
+	DWORD 
+		id_current_thread
+			= GetCurrentThreadId();
+
+	if (id_current_thread != pProbe->prb_thread_id
+			&& id_current_thread != pModules->prb_module_thread_id)
+				return;
 
 	__synapse_modules_cleanup
 		(pProbe->prb_mman, pModules->prb_module);
-	synapse_structure_double_linked_erase_at
+	synapse_double_linked_erase_at
 		(pProbe->prb_handle, pModules->prb_module_handle);
-
-	pProbe->prb_mman->deallocate
-		(pProbe->prb_mman->hnd_mman, pModules->prb_module_mblock);	
+	synapse_system_deallocate
+		(pModules);
 }
 
 __synapse_modules_probe_modules*
 	__synapse_modules_probe_retrieve_module
 		(__synapse_modules_probe* pProbe, const char* pName)
 {
-	synapse_structure_double_linked_node
+	synapse_double_linked_node
 		ptr_seek
-			= synapse_structure_double_linked_node_begin
+			= synapse_double_linked_node_begin
 					(pProbe->prb_handle);
 
 	if (pProbe->prb_thread_id != GetCurrentThreadId())
 		return NULL;
 
 	for ( ; ptr_seek.opaque
-		  ; ptr_seek = synapse_structure_double_linked_node_next(ptr_seek))
+		  ; ptr_seek = synapse_double_linked_node_next(ptr_seek))
 	{
 		__synapse_modules_probe_modules*
 			ptr_modules_probe
 				= *(__synapse_modules_probe_modules**)
-						synapse_structure_double_linked_node_data
+						synapse_double_linked_node_data
 							(ptr_seek);
 
 		if(strcmp

@@ -2,7 +2,7 @@
 #include <synapse/__internal/modules/init.h>
 
 #include <synapse/memory/interface/memory_manager.h>
-#include <synapse/memory/standard_heap.h>
+#include <synapse/memory/memory.h>
 
 #include <modules/probe/probe_init.h>
 #include <modules/probe/details/probe_manip.h>
@@ -22,7 +22,7 @@ synapse_modules_dll
 {
 	if(!__synapse_modules_mman)
 		__synapse_modules_mman
-			= synapse_initialize_standard_heap();
+			= synapse_system_memory_manager();
 
 	if(!synapse_modules_opaque_handle_reference
 			(__synapse_modules_probe_handle))
@@ -40,14 +40,10 @@ synapse_modules_dll
 			(__synapse_modules_probe_handle))
 				synapse_modules_probe_cleanup
 					(__synapse_modules_probe_handle);
-	
-	if(__synapse_modules_mman)
-		synapse_cleanup_standard_heap
-			(__synapse_modules_mman);
 
 	synapse_modules_opaque_handle_reference
-		(__synapse_modules_probe_handle) = NULL;
-	
+		(__synapse_modules_probe_handle) 
+			= NULL;
 	__synapse_modules_mman = NULL;
 }
 

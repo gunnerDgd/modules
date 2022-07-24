@@ -7,9 +7,6 @@
 typedef struct
 	__synapse_modules
 {
-	synapse_memory_block
-		mod_mblock;
-
 	synapse_modules_metadata
 		mod_metadata;
 	synapse_modules_traits

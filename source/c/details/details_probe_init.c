@@ -5,23 +5,15 @@ __synapse_modules_probe*
 	__synapse_modules_probe_initialize
 		(synapse_memory_manager* pMman)
 {
-	synapse_memory_block
-		hnd_mblock
-			= pMman->allocate
-				(pMman->hnd_mman, NULL, sizeof(__synapse_modules_probe));
-
 	__synapse_modules_probe*
 		ptr_probe
-			= pMman->block_pointer
-					(hnd_mblock);
+			= synapse_system_allocate
+					(sizeof(__synapse_modules_probe));
 
 	ptr_probe->prb_mman
 		= pMman;
-	ptr_probe->prb_mblock
-		= hnd_mblock;
-
 	ptr_probe->prb_handle
-		= synapse_structure_double_linked_initialize
+		= synapse_initialize_double_linked
 				(pMman);
 	ptr_probe->prb_thread_id
 		= GetCurrentThreadId();
@@ -34,29 +26,29 @@ void
 	__synapse_modules_probe_cleanup
 		(__synapse_modules_probe* pProbe)
 {
-	synapse_structure_double_linked_node
+	synapse_double_linked_node
 		ptr_seek
-			= synapse_structure_double_linked_node_begin
+			= synapse_double_linked_node_begin
 					(pProbe->prb_handle);
 
 	if (pProbe->prb_thread_id != GetCurrentThreadId())
 		return;
 
 	for ( ; ptr_seek.opaque
-		  ; ptr_seek = synapse_structure_double_linked_node_next(ptr_seek))
+		  ; ptr_seek = synapse_double_linked_node_next(ptr_seek))
 	{
 		__synapse_modules_probe_modules*
 			ptr_module
 				= *(__synapse_modules_probe_modules**)
-						synapse_structure_double_linked_node_data
+						synapse_double_linked_node_data
 							(ptr_seek);
 
 		__synapse_modules_cleanup
 			(pProbe->prb_mman, ptr_module->prb_module);
 	}
 
-	synapse_structure_double_linked_cleanup
+	synapse_cleanup_double_linked
 		(pProbe->prb_handle);
-	pProbe->prb_mman->deallocate
-		(pProbe->prb_mman->hnd_mman, pProbe->prb_mblock);
+	synapse_system_deallocate
+		(pProbe);
 }

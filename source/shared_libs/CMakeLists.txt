@@ -31,14 +31,12 @@ target_link_libraries(
 
 target_link_libraries(
     synapse_modules_dll
-    synapse_structure_dlist_lib
+    synapse_memory_dll
+    synapse_structure_dll
 )
 
 target_compile_options(
-    synapse_modules_dll PRIVATE /Dsynapse_modules_export_mode
-)
-
-target_link_libraries(
-    synapse_modules_dll
-    synapse_memory_dll
+    synapse_modules_dll 
+    PRIVATE 
+    /Dsynapse_modules_export_mode
 )
