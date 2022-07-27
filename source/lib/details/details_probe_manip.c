@@ -20,7 +20,13 @@ __synapse_modules_probe_modules*
 		= __synapse_modules_initialize
 				(pProbe->prb_mman, pModulePath, &res_modules_initialize);
 
-	if (!ptr_modules) return NULL;
+	if (!ptr_modules)
+		goto
+			__probe_init_module_failed;
+	if(__synapse_modules_probe_retrieve_module
+			(pProbe, ptr_modules->mod_metadata.modules_name))
+		goto
+			__probe_init_module_failed;
 
 	ptr_modules_probe
 		= synapse_system_allocate
@@ -34,8 +40,15 @@ __synapse_modules_probe_modules*
 		= synapse_double_linked_insert_back
 				(pProbe->prb_handle, &ptr_modules_probe, sizeof(__synapse_modules_probe_modules*));
 
+	goto
+		__probe_init_module_succuess;
+__probe_init_module_succuess:
 	return
 		ptr_modules_probe;
+__probe_init_module_failed:
+	__synapse_modules_cleanup
+		(pProbe->prb_mman, ptr_modules);
+	return NULL;
 }
 
 void
