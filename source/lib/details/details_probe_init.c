@@ -36,15 +36,17 @@ void
 	if (pProbe->prb_thread_id != GetCurrentThreadId())
 		return;
 
-	for ( ; ptr_seek.opaque
-		  ; ptr_seek = synapse_double_linked_node_next(ptr_seek))
+	while
+		(synapse_modules_opaque_handle_reference(ptr_seek))
 	{
 		__synapse_modules_probe_modules*
 			ptr_module
 				= *(__synapse_modules_probe_modules**)
 						synapse_double_linked_node_data
 							(ptr_seek);
-		
+
+		ptr_seek 
+			= synapse_double_linked_node_next(ptr_seek);
 		__synapse_modules_probe_unload_module
 			(pProbe, ptr_module);
 	}
