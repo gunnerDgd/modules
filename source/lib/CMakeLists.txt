@@ -7,7 +7,9 @@ project(
 )
 
 file(
-    GLOB_RECURSE src_synapse_modules_lib CONFIGURE_DEPENDS
+    GLOB_RECURSE 
+    src_synapse_modules_lib 
+    CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/*.c
 )
 
@@ -21,10 +23,5 @@ target_include_directories(
   synapse_modules_lib 
   PUBLIC 
   ${CMAKE_SOURCE_DIR}/include
-)
-
-target_include_directories(
-  synapse_modules_lib
-  PUBLIC 
   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 )

@@ -6,17 +6,10 @@ project(
   LANGUAGES C
 )
 
-add_subdirectory(source/c)
-add_subdirectory(source/shared_libs)
-add_subdirectory(source/cpp)
+if(SYNAPSE_BUILD_STATIC_LIB)
+  add_subdirectory(source/lib)
+endif()
 
-add_dependencies(
-    synapse_modules_dll
-    synapse_modules_lib
-)
-
-add_dependencies(
-    synapse_modules_lib_cpp
-    synapse_modules_lib
-    synapse_modules_dll
-)
+if(SYNAPSE_BUILD_SHARED_LIB)
+  add_subdirectory(source/shared_libs)
+endif()
