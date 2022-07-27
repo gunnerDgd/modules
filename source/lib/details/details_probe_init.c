@@ -1,4 +1,6 @@
 #include <modules/probe/details/probe_init.h>
+#include <modules/probe/details/probe_manip.h>
+
 #include <modules/details/modules_init.h>
 
 __synapse_modules_probe*
@@ -42,9 +44,9 @@ void
 				= *(__synapse_modules_probe_modules**)
 						synapse_double_linked_node_data
 							(ptr_seek);
-
-		__synapse_modules_cleanup
-			(pProbe->prb_mman, ptr_module->prb_module);
+		
+		__synapse_modules_probe_unload_module
+			(pProbe, ptr_module);
 	}
 
 	synapse_cleanup_double_linked
