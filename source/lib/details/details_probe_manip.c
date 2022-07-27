@@ -41,8 +41,8 @@ __synapse_modules_probe_modules*
 				(pProbe->prb_handle, &ptr_modules_probe, sizeof(__synapse_modules_probe_modules*));
 
 	goto
-		__probe_init_module_succuess;
-__probe_init_module_succuess:
+		__probe_init_module_success;
+__probe_init_module_success:
 	return
 		ptr_modules_probe;
 __probe_init_module_failed:
@@ -59,8 +59,8 @@ void
 		id_current_thread
 			= GetCurrentThreadId();
 
-	if (id_current_thread != pProbe->prb_thread_id
-			&& id_current_thread != pModules->prb_module_thread_id)
+	if ((id_current_thread != pProbe->prb_thread_id)
+			&& (id_current_thread != pModules->prb_module_thread_id))
 				return;
 
 	__synapse_modules_cleanup
